@@ -1,0 +1,38 @@
+<div>
+    <h1>Project</h1>
+  </div>
+  <form [formGroup]= "ProjectForm" (ngSubmit)="onSubmit()">
+
+      <label>
+        Project Name:
+        <input type="text" formControlName="Name">
+      </label>
+
+      <label>
+        Description:
+        <input textarea rows="4" cols="50" formControlName="Description">
+      </label>
+      <label>
+          Project Manager:
+          <input type="text" formControlName="ProjectManger">
+      </label>
+
+      <label>
+          Lead Team Member:
+          <input type="text" formControlName="LeadTeamMembers">
+      </label>
+
+      <br>
+      <label>
+          Project Feature:
+          <input type="text" formControlName="ProjectFeature">
+      </label>
+      <label>
+          <input type="text" formControlName="ProjectFeature">
+      </label>
+      <label>
+          <input type="text" formControlName="ProjectFeature">
+      </label>
+      <button type="submit" [disabled]="!ProjectForm.valid">Submit</button>
+
+    </form>

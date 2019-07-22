@@ -1,0 +1,18 @@
+<h2>Work In Progress Projects</h2>
+
+<ul class="projects">
+  <li *ngFor="let project of projects"
+    [class.selected]="project === selectedProject"
+    (click)="onSelect(project)">
+    <span class="badge">{{project.projectID}}</span> {{project.projectName}}
+  </li>
+</ul>
+<div *ngIf="selectedProject">
+
+  <h2>{{selectedProject.projectName | uppercase}}: Overview</h2>
+  <div><span>Status: </span>{{selectedProject.projectStatus}}</div>
+  <div><span>Project Manager: </span>{{selectedProject.projectManager}}</div>
+  <div><span>Lead Team Member: </span>{{selectedProject.leadTeamMember}}</div>
+  <div><span>Project Description: </span>{{selectedProject.projectDescription}}</div>
+
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+export type EditorType = 'teammember' | 'project' | 'home' | 'mock';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'SPM-App';
+
+  page: EditorType = 'home';
+
+  get showTeamMemberPage(){
+    return this.page === 'teammember';
+  }
+  get showHome(){
+    return this.page === 'home';
+  }
+  get showProject(){
+    return this.page === 'project';
+  }
+  get showProjectMock(){
+    return this.page === 'mock';
+  }
+  toggleEditor(type: EditorType){
+    this.page = type;
+  }
+
 }

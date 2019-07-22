@@ -1,0 +1,17 @@
+<div>
+  <h1>Team Member</h1>
+</div>
+<form [formGroup]= "TeamMemberForm" (ngSubmit)="onSubmit()">
+
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName">
+    </label>
+
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName">
+    </label>
+    <button type="submit" [disabled]="!TeamMemberForm.valid">Submit</button>
+
+  </form>
